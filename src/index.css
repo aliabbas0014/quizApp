@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  /* In src/index.css or src/App.css */
+  body {
+    
+    font-family: "Poppins", serif;
+
+  }
+  
+
+  

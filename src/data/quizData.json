@@ -1,0 +1,104 @@
+{
+  "quiz": [
+    {
+      "question": "What is the brain of the computer?",
+      "options": ["CPU", "RAM", "Hard Drive", "Motherboard"],
+      "correctAnswer": "CPU"
+    },
+    {
+      "question": "Which of the following is a permanent storage device?",
+      "options": ["RAM", "SSD", "Cache", "CPU"],
+      "correctAnswer": "SSD"
+    },
+    {
+      "question": "What does RAM stand for?",
+      "options": ["Random Access Memory", "Read Access Memory", "Rapid Access Memory", "Random Allocate Memory"],
+      "correctAnswer": "Random Access Memory"
+    },
+    {
+      "question": "Which part of the computer is used to connect to the internet?",
+      "options": ["Processor", "Network Card", "USB Port", "Power Supply"],
+      "correctAnswer": "Network Card"
+    },
+    {
+      "question": "Which one is an input device?",
+      "options": ["Monitor", "Printer", "Keyboard", "Speaker"],
+      "correctAnswer": "Keyboard"
+    },
+    {
+      "question": "What does CPU stand for?",
+      "options": ["Central Processing Unit", "Central Program Unit", "Control Processing Unit", "Computer Processing Unit"],
+      "correctAnswer": "Central Processing Unit"
+    },
+    {
+      "question": "Which of the following is an example of system software?",
+      "options": ["Microsoft Word", "Windows OS", "Adobe Photoshop", "Google Chrome"],
+      "correctAnswer": "Windows OS"
+    },
+    {
+      "question": "Which memory is volatile?",
+      "options": ["ROM", "SSD", "RAM", "Hard Drive"],
+      "correctAnswer": "RAM"
+    },
+    {
+      "question": "What is the full form of BIOS?",
+      "options": ["Basic Input Output System", "Binary Input Output System", "Basic Integrated Operating System", "Basic Internal Operating System"],
+      "correctAnswer": "Basic Input Output System"
+    },
+    {
+      "question": "Which of the following is a type of software that is designed to manage hardware and software resources on a computer?",
+      "options": ["System Software", "Application Software", "Malware", "Firmware"],
+      "correctAnswer": "System Software"
+    },
+    {
+      "question": "Which part of the computer is responsible for executing instructions?",
+      "options": ["RAM", "Hard Drive", "CPU", "Power Supply"],
+      "correctAnswer": "CPU"
+    },
+    {
+      "question": "Which device is primarily used for printing documents?",
+      "options": ["Monitor", "Keyboard", "Scanner", "Printer"],
+      "correctAnswer": "Printer"
+    },
+    {
+      "question": "What is the main function of an operating system?",
+      "options": ["Manage computer hardware", "Compile programs", "Convert code into machine language", "Scan for viruses"],
+      "correctAnswer": "Manage computer hardware"
+    },
+    {
+      "question": "Which of the following is an example of an output device?",
+      "options": ["Mouse", "Monitor", "Keyboard", "Microphone"],
+      "correctAnswer": "Monitor"
+    },
+    {
+      "question": "What is the smallest unit of data in a computer?",
+      "options": ["Bit", "Byte", "Kilobyte", "Megabyte"],
+      "correctAnswer": "Bit"
+    },
+    {
+      "question": "Which device helps to backup data?",
+      "options": ["Hard Drive", "RAM", "CPU", "Motherboard"],
+      "correctAnswer": "Hard Drive"
+    },
+    {
+      "question": "Which of the following is considered the 'boot program' that starts when the computer is powered on?",
+      "options": ["BIOS", "CPU", "RAM", "SSD"],
+      "correctAnswer": "BIOS"
+    },
+    {
+      "question": "Which port is used to connect external storage devices like USB drives?",
+      "options": ["HDMI Port", "USB Port", "VGA Port", "Ethernet Port"],
+      "correctAnswer": "USB Port"
+    },
+    {
+      "question": "Which of the following is used for graphical output?",
+      "options": ["Sound Card", "Graphics Card", "Processor", "Network Card"],
+      "correctAnswer": "Graphics Card"
+    },
+    {
+      "question": "What does GUI stand for?",
+      "options": ["Graphical User Interface", "Global User Interaction", "General Utility Interface", "General User Interaction"],
+      "correctAnswer": "Graphical User Interface"
+    }
+  ]
+}
