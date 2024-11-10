@@ -12,7 +12,7 @@ function App() {
   return (
     <QuizProvider>
       <div className="min-h-screen flex flex-col ">
-        <Router>
+        <Router basename='/quizApp'>
           <Navbar />
           <main className="flex-grow ">
             <Routes>
