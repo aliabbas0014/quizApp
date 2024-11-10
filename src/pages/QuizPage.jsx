@@ -123,7 +123,7 @@ const QuizPage = () => {
       </div>
 
       <div className="flex justify-between w-full mt-6 lg:mt-0 lg:w-11/12 max-w-4xl mb-2">
-        <h3 className="text-sm md:text-md lg:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+        <h3 className="text-sm md:text-md lg:text-md font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
           Question No. {currentQuestionIndex + 1} of {questions.length}
         </h3>
         <div className="text-xs font-bold self-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">

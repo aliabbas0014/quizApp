@@ -1,5 +1,5 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -12,7 +12,7 @@ function App() {
   return (
     <QuizProvider>
       <div className="min-h-screen flex flex-col ">
-        <Router>
+        <BrowserRouter>
           <Navbar />
           <main className="flex-grow ">
             <Routes>
@@ -22,7 +22,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
-        </Router>
+        </BrowserRouter>
       </div>
     </QuizProvider>
   );
