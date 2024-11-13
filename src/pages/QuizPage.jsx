@@ -20,12 +20,23 @@ const QuizPage = () => {
     setScore,
   } = useQuiz();
 
+
   const [isOptionSelected, setIsOptionSelected] = useState(false);
   const [isSubmitClicked, setIsSubmitClicked] = useState(false);
   const totalQuestions = questions.length;
   const [disabledQuestions, setDisabledQuestions] = useState(new Set());
+  const [showModal, setShowModal] = useState(true); // Modal state
+  const [isTimerPaused, setIsTimerPaused] = useState(true); // New state to pause the timer
+  const [showResetPopup, setShowResetPopup] = useState(false);
 
+  const handleResetClick = () => {
+    setShowResetPopup(true); // Show the popup when reset is clicked
+  };
+  
+  
   useEffect(() => {
+    if (isTimerPaused) return; // If the timer is paused, don't start the interval
+
     if (timer > 0) {
       const interval = setInterval(() => {
         setTimer((prev) => prev - 1);
@@ -34,7 +45,7 @@ const QuizPage = () => {
     } else {
       handleTimeUp();
     }
-  }, [timer]);
+  }, [timer, isTimerPaused]); // Start timer only if isTimerPaused is false
 
   const handleTimeUp = () => {
     setIsSubmitClicked(true);
@@ -112,10 +123,31 @@ const QuizPage = () => {
     setTimer(30);
     setScore(0);
     setDisabledQuestions(new Set());
+    setShowResetPopup(false); // Close the popup after reset
   };
 
   return (
     <div className=" flex flex-col items-center justify-center p-4">
+
+{showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-md shadow-lg max-w-sm w-full">
+            <p className="text-gray-800 text-sm md:text-md mb-4">
+              There are a total of 20 quizzes, and each quiz has a 30-second timer. You must complete each quiz within 30 seconds.
+            </p>
+            <button
+              onClick={() => {
+                setShowModal(false); // Hide the modal
+                setIsTimerPaused(false); // Unpause the timer
+              }}
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="flex justify-between w-full p-2 rounded-md">
         <div className="text-xs lg:text-base bg-gradient-to-r from-indigo-500 to-blue-500 text-white p-2 rounded-md">
           Score: {score} / {totalQuestions}
@@ -162,11 +194,36 @@ const QuizPage = () => {
       <div className="flex flex-col md:flex-row-reverse justify-between w-full mb-1 mt-2">
         <div className="flex flex-wrap space-x-2 md:mt-0 lg:mr-56">
           <button
-            onClick={handleReset}
+            onClick={handleResetClick}
             className="text-xs w-16 h-8 m-1 bg-red-500 text-white p-1 rounded-md hover:bg-red-400 shadow-lg"
           >
             Reset
           </button>
+
+          {showResetPopup && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div className="bg-white p-6 rounded-md shadow-lg max-w-sm w-full">
+      <p className="text-gray-800 text-md mb-4">
+        Are you sure you want to reset the quiz? This will clear all progress.
+      </p>
+      <div className="flex justify-around">
+        <button
+          onClick={handleReset} // Reset quiz on confirm
+          className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-400"
+        >
+          Yes
+        </button>
+        <button
+          onClick={() => setShowResetPopup(false)} // Close the popup on cancel
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400"
+        >
+          No
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
 
           <button
             onClick={handlePrevious}
