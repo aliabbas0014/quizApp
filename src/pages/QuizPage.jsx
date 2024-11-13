@@ -123,30 +123,32 @@ const QuizPage = () => {
     setTimer(30);
     setScore(0);
     setDisabledQuestions(new Set());
+    setIsOptionSelected(false); // Reset the option selection state
+    setIsSubmitClicked(false); // Reset submit state
     setShowResetPopup(false); // Close the popup after reset
   };
 
   return (
     <div className=" flex flex-col items-center justify-center p-4">
-
 {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-md shadow-lg max-w-sm w-full">
-            <p className="text-gray-800 text-sm md:text-md mb-4">
-              There are a total of 20 quizzes, and each quiz has a 30-second timer. You must complete each quiz within 30 seconds.
-            </p>
-            <button
-              onClick={() => {
-                setShowModal(false); // Hide the modal
-                setIsTimerPaused(false); // Unpause the timer
-              }}
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400"
-            >
-              OK
-            </button>
-          </div>
-        </div>
-      )}
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div className="bg-white p-6 rounded-md shadow-lg w-10/12 sm:w-3/4 md:w-1/2 lg:w-1/3">
+      <p className="text-gray-800 text-sm md:text-md mb-4">
+        There are a total of 20 quizzes, and each quiz has a 30-second timer. You must complete each quiz within 30 seconds.
+      </p>
+      <button
+        onClick={() => {
+          setShowModal(false); // Hide the modal
+          setIsTimerPaused(false); // Unpause the timer
+        }}
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+)}
+
 
       <div className="flex justify-between w-full p-2 rounded-md">
         <div className="text-xs lg:text-base bg-gradient-to-r from-indigo-500 to-blue-500 text-white p-2 rounded-md">
@@ -201,8 +203,10 @@ const QuizPage = () => {
           </button>
 
           {showResetPopup && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-    <div className="bg-white p-6 rounded-md shadow-lg max-w-sm w-full">
+  <div
+    className="fixed top-0 left-[-10px] right-0 bottom-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+  >
+    <div className="bg-white p-6 rounded-md shadow-lg w-10/12 sm:w-3/4 md:w-1/2 lg:w-1/3">
       <p className="text-gray-800 text-md mb-4">
         Are you sure you want to reset the quiz? This will clear all progress.
       </p>
@@ -223,6 +227,10 @@ const QuizPage = () => {
     </div>
   </div>
 )}
+
+
+
+
 
 
           <button
